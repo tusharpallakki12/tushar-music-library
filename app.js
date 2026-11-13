@@ -10,19 +10,19 @@ app.set("view engine", "ejs");
 // Serve CSS and other static files
 app.use(express.static("public"));
 
-// Dynamic homepage data
-const appName = "SoundWave";
+// Website details
+const appName = "Tushar Pallakki";
 const tagline = "Your music, your mood, your world";
 
 // Home route
 app.get("/", (req, res) => {
     res.render("index", {
-        appName: 'janagam hemanth',
+        appName: appName,
         tagline: tagline
     });
 });
 
-
+// Songs data
 const songs = [
     {
         title: "Blinding Lights",
@@ -63,7 +63,6 @@ app.get("/songs", (req, res) => {
         songs: songs
     });
 });
-
 
 // Start server
 app.listen(port, () => {
